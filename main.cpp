@@ -109,8 +109,10 @@ cMainFrame::cMainFrame()
   m_LogfileSize = 0; //GetLogfileSize();
 
   Show(true);
+#ifdef __WSMSW__
   RegisterHotKey(1000, wxACCEL_CTRL, 'L');
   Connect(wxEVT_HOTKEY, wxKeyEventHandler(cMainFrame::OnHotkey));
+#endif
 
   m_LastUpdate = 0;
 
